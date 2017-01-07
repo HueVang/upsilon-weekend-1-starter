@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Weekend 1</title>
+    <link rel="stylesheet" href="style.css">
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -17,12 +18,26 @@
       <input type="text" id="employeeLastName" name="employeeLastName" />
       <label for="employeeIdNumber">ID Number</label>
       <input type="text" name="employeeIdNumber" />
+      <label for="employeeJobTitle">Job Title</label>
+      <input type="text" name="employeeJobTitle"/>
+      <label for="annualSalary">Annual Salary</label>
+      <input type="text" name="annualSalary"/>
       <input type="submit" value="Submit" />
+      <input type="button" value="Delete" />
     </form>
 
     <div id="employees">
-      <h2>Employees</h2>
+      <h2>Employee List</h2>
+      <p><u>Name</u></p>
+      <p><u>ID</u></p>
+      <p><u>Title</u></p>
+      <p><u>Annual Salary</u></p>
       <!-- to be added via JavaScript -->
+    </div>
+    <div id="expenditures">
+      <h2>Monthly Salary Expenditures</h2>
+
+    </div>
     </div>
   </body>
 </html>
