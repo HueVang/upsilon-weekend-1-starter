@@ -52,7 +52,8 @@ function appendDom(emp) {
     $emp.append('<p>' + emp.employeeJobTitle + '</p>');
     $emp.append('<p>' + emp.annualSalary + '</p>');
 
-    $('#employees').append($emp); // append our div to the DOM
+    $($emp).hide().appendTo('#employees').fadeIn(1000); //fadeIn transition
+    //$('#employees').append($emp); // append our div to the DOM (no fadeIn)
 
     if (isNaN(Number(emp.annualSalary)) == false) {
       appendExp(emp);
@@ -67,17 +68,20 @@ function appendExp(exp) {
 
   $exp.append('<p>' + ((totalSalary + Number(exp.annualSalary)) / 12) + '</p>');
 
-  $('#expenditures').append($exp);
+  $($exp).hide().appendTo('#expenditures').fadeIn(1000); //fadeIn transition
+  //$('#expenditures').append($exp); //append our div to the DOM (no fadeIn)
   salaryArray[0] = totalSalary + Number(exp.annualSalary);
 }
 
 function editExp(arg) {
+
   $('div').remove('.expenditure');
   var $arg = $('<div class="expenditure"></div>');
   var totalSalary = salaryArray[0];
 
   $arg.append('<p>' + ((totalSalary - arg) / 12) + '</p>');
-  $('#expenditures').append($arg);
+  $($arg).hide().appendTo('#expenditures').fadeIn(1000);
+  //$('#expenditures').append($arg);
   salaryArray[0] = totalSalary - arg;
   //console.log(salaryArray[0]);
 }
