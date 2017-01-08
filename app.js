@@ -15,9 +15,8 @@ $(function () {
       formData[input.name] = input.value;
     });
 
-    console.log(formData);
+    console.log(formData); // Just logging object into the console to check if everything is working.
     appendDom(formData);
-
     clearForm();
   });
 
@@ -44,8 +43,6 @@ $(function () {
   });
 });
 
-
-
 function appendDom(emp) {
   if (emp.employeeFirstName != '' || emp.employeeLastName != '' || emp.employeeIdNumber != '' || emp.employeeJobTitle != '' || emp.annualSalary != '') {
     var $emp = $('<div id="' + emp.employeeFirstName + '"class="employee"></div>').data('annualSalary', Number(emp.annualSalary)); // create a div jQuery object
@@ -67,7 +64,6 @@ function appendExp(exp) {
   $('div').remove('.expenditure');
   var $exp = $('<div class="expenditure"></div>');
   var totalSalary = salaryArray[0];
-
 
   $exp.append('<p>' + ((totalSalary + Number(exp.annualSalary)) / 12) + '</p>');
 
